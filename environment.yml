@@ -1,0 +1,10 @@
+name: ai-s4-vw
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - -r requirements.txt

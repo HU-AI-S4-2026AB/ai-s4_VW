@@ -1,0 +1,39 @@
+# Centrale projectconfiguratie (ai-s4_VW)
+# Waarden met `null` zijn nog niet vastgesteld. Ze worden ingevuld zodra het team
+# ze in een sprint heeft onderbouwd; zet dan de bron (sprint, issue of PvA-deelvraag) erbij.
+
+paths:
+  raw_images_dir: "data/raw"
+  metadata_excel: "data/raw/non_damage_images.xlsx"
+  processed_dir: "data/processed"
+  predictions_csv: "data/processed/predictions.csv"
+
+preprocessing:
+  # TODO: invoerresolutie, hangt af van de gekozen modelvariant
+  target_size: null
+  # TODO: fracties van boven/onder die weggesneden worden (motorkap, PvA H8); meten op steekproef
+  top_crop_ratio: null
+  bottom_crop_ratio: null
+  # TODO: ondergrens gemiddelde helderheid (0-255) voor bruikbare beelden
+  min_brightness: null
+
+split:
+  # Splitsen op rit/GPS-locatie zodat hetzelfde wegvak niet in train en test valt (PvA H10, stap 5)
+  group_by: "ride"            # "ride" of "location"; definitieve keuze nog vast te stellen
+  train_ratio: null           # TODO
+  val_ratio: null             # TODO
+  test_ratio: null            # TODO
+  random_seed: 42             # vaste seed voor reproduceerbaarheid
+
+model:
+  # Voorlopig YOLO volgens de MCDA in het PvA; welke (kleine) variant volgt uit de baseline-sprint
+  architecture: null          # TODO
+  epochs: null                # TODO
+  batch_size: null            # TODO
+  random_seed: 42
+
+evaluation:
+  # Instelbaar volgens PvA; de waarde zelf is de uitkomst van deelvraag 4 (balans recall/precision)
+  confidence_threshold: null  # TODO
+  # TODO: maximale afstand (m) bij koppelen van een detectie aan het NWB
+  nwb_max_distance_m: null

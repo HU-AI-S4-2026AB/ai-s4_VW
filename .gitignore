@@ -1,0 +1,38 @@
+# Dataset van VolkerWessels en gegenereerde data (nooit in Git)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/sample/.gitkeep
+!data/sample/**
+*.jpg
+*.jpeg
+*.png
+*.xlsx
+!assets/**/*.png
+!docs/**/*.png
+
+# Getrainde YOLO-gewichten en trainingsruns
+*.pt
+*.pth
+*.onnx
+runs/
+wandb/
+
+# Python cache en virtuele omgevingen
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# PyCharm, VS Code en OS-bestanden
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Geheimen en API-sleutels
+.env
+*.local
